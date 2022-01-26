@@ -12,7 +12,7 @@ export default function ChatInput({ mensagens, setListaMensagens }: Props) {
 
   function getUser() {
     if (typeof window !== 'undefined') {
-      return JSON.parse(localStorage.getItem('usuario') as string)
+      return JSON.parse(localStorage.getItem('usuario') as string) || 'gabrielborel'
     }
   }
 
