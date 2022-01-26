@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import LoginFormulario from '../src/components/Login/Login'
+import LoginFormulario from '../src/components/Login/LoginPage'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {

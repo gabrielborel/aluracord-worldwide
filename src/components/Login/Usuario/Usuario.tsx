@@ -8,7 +8,6 @@ interface Props {
 }
 
 export default function Usuario({ username, name }: Props) {
-  console.log(username)
   return username ? (
     <section className={styles.usuarioContainer}>
       <Image

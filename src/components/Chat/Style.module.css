@@ -1,0 +1,11 @@
+.chatArea {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  height: 100%;
+  max-height: 95vh;
+  width: 95%;
+  padding: 2rem;
+  background-color: var(--700neutral);
+  font-family: 'Roboto', sans-serif;
+}

@@ -1,0 +1,39 @@
+.message {
+  color: var(--000neutral);
+  width: fit-content;
+  padding: 0.7rem 0.7rem 0.7rem 0.4rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.message:hover.message {
+  background-color: var(--800neutral);
+}
+
+.img {
+  border-radius: 50%;
+}
+
+.userArea {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  align-items: baseline;
+}
+
+.userName {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.1rem;
+}
+
+.data {
+  font-size: 0.7rem;
+  opacity: 0.6;
+}
+
+.messageContent {
+  font-size: 0.9rem;
+  line-height: 0.8rem;
+}

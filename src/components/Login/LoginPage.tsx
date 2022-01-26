@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Formulario from './Formulario/Formulario'
 import styles from './Style.module.css'
 import Usuario from './Usuario/Usuario'

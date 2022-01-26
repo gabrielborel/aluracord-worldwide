@@ -1,0 +1,35 @@
+.header {
+  width: 100%;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Roboto', sans-serif;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1rem;
+  color: var(--000neutral);
+  text-transform: uppercase;
+}
+
+.logoutButton {
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.5rem;
+  line-height: 1rem;
+  background-color: var(--600neutral);
+  border: none;
+  color: var(--000neutral);
+  border-radius: 4px;
+  transition: 1s;
+  cursor: pointer;
+  border: 1px solid red;
+}
+
+.logoutButton:hover.logoutButton {
+  background-color: var(--200neutral);
+  color: var(--800neutral);
+}

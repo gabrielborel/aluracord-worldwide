@@ -1,7 +1,7 @@
-import React, { FormEvent, ChangeEvent, Dispatch, SetStateAction, useState } from 'react'
+import React, { FormEvent, ChangeEvent, Dispatch, SetStateAction } from 'react'
 import styles from './Style.module.css'
 import { useRouter } from 'next/router'
-import { User } from '../Login'
+import { User } from '../LoginPage'
 
 interface Props {
   setUser: Dispatch<SetStateAction<User>>
@@ -23,16 +23,13 @@ export default function Formulario({ setUser }: Props) {
     roteamento.push('/chat')
   }
 
-  function handleError(response: Response) {
-    if (response.status !== 200) return
-  }
-
   async function getUserData(username: string) {
     const url = `https://api.github.com/users/${username}`
     const response = await fetch(url)
-    handleError(response)
+    if (response.status !== 200) return
     const userData = await response.json()
     setUser({ username: userData.login, name: userData.name })
+    localStorage.setItem('usuario', JSON.stringify(username))
   }
 
   return (

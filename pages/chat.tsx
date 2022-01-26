@@ -1,5 +1,11 @@
 import React from 'react'
+import ChatPage from '../src/components/Chat/ChatPage'
+import styles from '../styles/Home.module.css'
 
 export default function Chat() {
-  return <h1>página do chat</h1>
+  return (
+    <div className={styles.background}>
+      <ChatPage />
+    </div>
+  )
 }
