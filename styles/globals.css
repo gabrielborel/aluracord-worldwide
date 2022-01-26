@@ -1,9 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,400;1,500&display=swap');
+
+:root {
+	--050primary: #caf0f8;
+	--100primary: #ade8f4;
+	--200primary: #90e0ef;
+	--300primary: #48cae4;
+	--400primary: #00b4d8;
+	--500primary: #0096c7;
+	--600primary: #0077b6;
+	--700primary: #023e8a;
+	--800primary: #03045e;
+
+	--000neutral: #FFFFFF;
+	--050neutral: #F5F7FA;
+	--100neutral: #E4E7EB;
+	--200neutral: #CBD2D9;
+	--300neutral: #9AA5B1;
+	--400neutral: #52667A;
+	--500neutral: #313D49;
+	--600neutral: #29333D;
+	--700neutral: #212931;
+	--800neutral: #181F25;
+	--900neutral: #101418;
+	--999neutral: #080A0C;
+}
+
 html,
 body {
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+	list-style: none;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	width: 100vw;
+	height: 100vh;
+	background-image: url(https://i.pinimg.com/originals/03/06/fc/0306fc0b350a052f5fd9504fdd6044cb.jpg);
+	background-size: 1800px 1000px;
+	background-repeat: no-repeat;
+	animation: animatedBackground 60s linear infinite;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@keyframes animatedBackground {
+	0% {
+		background-position: 0 0;
+	}
+	20% {
+		background-position: -50px 0px;
+	}
+	40% {
+		background-position: -100px -50px;
+	}
+	60% {
+		background-position: -50px -70px;
+	}
+	80% {
+		background-position: 0px -20px;
+	}
+	100% {
+		background-position: 0 0;
+	}
 }
 
 a {
@@ -13,4 +73,53 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }

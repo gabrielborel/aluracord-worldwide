@@ -1,0 +1,32 @@
+.usuarioContainer {
+  background-color: var(--800neutral);
+  padding: 2rem 1.5rem;
+  border-radius: 10px;
+  border: 1px solid var(--999neutral);
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img {
+  border-radius: 100px;
+  background-size: cover;
+}
+
+.usernameContainer {
+  margin-top: 1rem;
+  display: block;
+  background-color: var(--900neutral);
+  padding: 0.35rem;
+  border-radius: 40px;
+  border: 1px solid var(--999neutral);
+}
+
+.username {
+  text-align: center;
+  color: var(--000neutral);
+  position: relative;
+  font-size: 0.8rem;
+}
