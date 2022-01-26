@@ -1,5 +1,5 @@
 import React, { FormEvent, ChangeEvent, Dispatch, SetStateAction } from 'react'
-import styles from './Style.module.css'
+import styles from './Formulario.module.css'
 import { useRouter } from 'next/router'
 import { User } from '../LoginPage'
 
@@ -26,7 +26,6 @@ export default function Formulario({ setUser }: Props) {
   async function getUserData(username: string) {
     const url = `https://api.github.com/users/${username}`
     const response = await fetch(url)
-    if (response.status !== 200) return
     const userData = await response.json()
     setUser({ username: userData.login, name: userData.name })
     localStorage.setItem('usuario', JSON.stringify(username))

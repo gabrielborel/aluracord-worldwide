@@ -1,6 +1,6 @@
 import React, { ChangeEvent, KeyboardEvent, Dispatch, SetStateAction, useState } from 'react'
 import { Mensagem } from '../ChatPage'
-import styles from './Style.module.css'
+import styles from './Input.module.css'
 
 interface Props {
   mensagens: Mensagem[]

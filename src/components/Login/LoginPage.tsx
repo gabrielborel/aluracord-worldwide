@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Formulario from './Formulario/Formulario'
-import styles from './Style.module.css'
+import styles from './Login.module.css'
 import Usuario from './Usuario/Usuario'
 
 export interface User {

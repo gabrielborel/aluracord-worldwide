@@ -3,8 +3,10 @@
   width: fit-content;
   padding: 0.7rem 0.7rem 0.7rem 0.4rem;
   border-radius: 5px;
-  cursor: pointer;
   transition: .5s;
+  padding-right: 2.2rem;
+  border: 1px solid var(--800neutral);
+  margin-bottom: 0.5rem;
 }
 
 .message:hover.message {
@@ -12,14 +14,15 @@
 }
 
 .img {
-  border-radius: 50%;
+  border-radius: 100px;
 }
 
 .userArea {
   display: flex;
   gap: 0.5rem;
   margin-bottom: 1rem;
-  align-items: baseline;
+  align-items: center;
+  position: relative;
 }
 
 .userName {
@@ -36,4 +39,16 @@
 .messageContent {
   font-size: 0.9rem;
   line-height: 0.8rem;
+}
+
+.deletar {
+  position: absolute;
+  right: -32px;
+  top: -2px;
+  border: none;
+  background-color: transparent;
+  color: var(--000neutral);
+  font-size: 1.5rem;
+  line-height: 0.5rem;
+  cursor: pointer;
 }

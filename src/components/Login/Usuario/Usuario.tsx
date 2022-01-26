@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import styles from './Style.module.css'
+import styles from './Usuario.module.css'
 
 interface Props {
   username: string
