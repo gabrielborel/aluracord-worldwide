@@ -23,7 +23,7 @@ export default function Message({ mensagem, usuario, handleDelete, id }: Props) 
         <p className={styles.userName}>{usuario}</p>
         <p className={styles.data}>{new Date().toLocaleDateString()}</p>
         <button className={styles.deletar} onClick={handleDelete} data-id={id}>
-          x
+          DELETAR
         </button>
       </div>
       <p className={styles.messageContent}>{mensagem}</p>

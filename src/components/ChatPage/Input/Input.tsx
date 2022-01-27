@@ -2,7 +2,7 @@ import React, { ChangeEvent, KeyboardEvent, Dispatch, SetStateAction, useState }
 import { Mensagem } from '../ChatPage'
 import styles from './Input.module.css'
 import { v4 as uuidv4 } from 'uuid'
-import supabaseClient from '../../../supabase'
+import supabaseClient from '../../../services/supabase'
 
 interface Props {
   mensagens: Mensagem[]
@@ -25,11 +25,13 @@ export default function ChatInput({ mensagens, setListaMensagens }: Props) {
   function handleEnter(event: KeyboardEvent<HTMLInputElement>) {
     if (event.key === 'Enter') {
       event.preventDefault()
-      newMensagem()
+      novaMensagem()
     }
   }
 
-  function newMensagem() {
+  function novaMensagem() {
+    if (!mensagem) return
+
     supabaseClient
       .from('mensagens')
       .insert([
@@ -55,7 +57,7 @@ export default function ChatInput({ mensagens, setListaMensagens }: Props) {
         onChange={handleChange}
         onKeyPress={handleEnter}
       />
-      <button className={styles.button} onClick={newMensagem}>
+      <button className={styles.button} onClick={novaMensagem}>
         Enviar
       </button>
     </div>

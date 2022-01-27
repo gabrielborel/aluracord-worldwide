@@ -4,8 +4,6 @@
   padding: 0.7rem 0.7rem 0.7rem 0.4rem;
   border-radius: 5px;
   transition: .5s;
-  padding-right: 2.2rem;
-  border: 1px solid var(--800neutral);
   margin-bottom: 0.5rem;
 }
 
@@ -42,13 +40,17 @@
 }
 
 .deletar {
-  position: absolute;
-  right: -32px;
-  top: -2px;
+  font-family: 'Roboto', sans-serif;
   border: none;
-  background-color: transparent;
-  color: var(--000neutral);
-  font-size: 1.5rem;
+  background-color: #f1040c;
+  padding: 0.2rem;
+  color: var(--100neutral);
+  font-size: 0.7rem;
+  font-weight: 700;
   line-height: 0.5rem;
+  letter-spacing: 1px;
+  border-radius: 5px;
   cursor: pointer;
+  border: 2px solid #8d0106;
+  margin-left: 1rem;
 }

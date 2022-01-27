@@ -3,8 +3,7 @@ import Header from './Header/Header'
 import ChatInput from './Input/Input'
 import MessageList from './MessageList/MessageList'
 import styles from './ChatPage.module.css'
-import { createClient, PostgrestResponse } from '@supabase/supabase-js'
-import supabaseClient from '../../supabase/index'
+import supabaseClient from '../../services/supabase'
 
 export interface Mensagem {
   texto: string
@@ -15,13 +14,15 @@ export interface Mensagem {
 export default function ChatPage() {
   const [mensagens, setListaMensagens] = useState<Mensagem[]>([])
 
-  useEffect(() => {
+  function carregarMensagens() {
     supabaseClient
       .from('mensagens')
       .select('*')
       .order('id', { ascending: false })
       .then((response) => response.data && setListaMensagens(response.data))
-  }, [])
+  }
+
+  useEffect(() => carregarMensagens(), [])
 
   return (
     <div className={styles.chatArea}>
