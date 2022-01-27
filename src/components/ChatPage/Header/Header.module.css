@@ -9,10 +9,11 @@
 
 .title {
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   line-height: 1rem;
   color: var(--000neutral);
   text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .logoutButton {
@@ -20,16 +21,16 @@
   font-size: 1rem;
   padding: 0.5rem;
   line-height: 1rem;
-  background-color: var(--600neutral);
+  background-color: transparent;
   border: none;
   color: var(--000neutral);
   border-radius: 4px;
   transition: 1s;
   cursor: pointer;
-  border: 1px solid red;
+  border: 2px solid #f1040c;
 }
 
-.logoutButton:hover.logoutButton {
-  background-color: var(--200neutral);
-  color: var(--800neutral);
+.logoutButton:hover {
+  background-color: #f1040c;
+  border: 2px solid #8d0106
 }

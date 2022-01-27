@@ -13,22 +13,31 @@
   height: 4rem;
   padding: 1rem;
   color: var(--000neutral);
-  border: 1px solid var(--500primary);
+  border-bottom: 2px solid var(--500primary);
   width: 100%;
 }
 
+.input::placeholder {
+  color: var(--000neutral);
+  letter-spacing: 1px;
+}
+
 .button {
+  font-family: 'Roboto', sans-serif;
   border: none;
   border-radius: 5px;
   background-color: var(--800neutral);
   font-weight: 700;
   color: var(--000neutral);
-  border: 1px solid var(--500primary);
+  border: 2px solid var(--500primary);
   transition: 0.5s;
+  padding: 0 0.8rem;
+  letter-spacing: 1px;
+  font-size: 1rem;
 }
 
 .button:hover.button {
   background-color: var(--500primary);
-  border: 1px solid var(--600primary);
+  border: 2px solid var(--600primary);
   cursor: pointer;
 }
