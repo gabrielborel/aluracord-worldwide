@@ -6,7 +6,7 @@ interface Props {
   mensagem: string
   usuario: string
   handleDelete: (event: React.MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => void
-  id: number
+  id: string
 }
 
 export default function Message({ mensagem, usuario, handleDelete, id }: Props) {

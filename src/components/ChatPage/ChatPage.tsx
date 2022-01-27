@@ -1,17 +1,27 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from './Header/Header'
 import ChatInput from './Input/Input'
 import MessageList from './MessageList/MessageList'
 import styles from './ChatPage.module.css'
+import { createClient, PostgrestResponse } from '@supabase/supabase-js'
+import supabaseClient from '../../supabase/index'
 
 export interface Mensagem {
-  conteudo: string
-  usuario: string
-  id: number
+  texto: string
+  de: string
+  id: string
 }
 
 export default function ChatPage() {
   const [mensagens, setListaMensagens] = useState<Mensagem[]>([])
+
+  useEffect(() => {
+    supabaseClient
+      .from('mensagens')
+      .select('*')
+      .order('id', { ascending: false })
+      .then((response) => response.data && setListaMensagens(response.data))
+  }, [])
 
   return (
     <div className={styles.chatArea}>

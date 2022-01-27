@@ -1,6 +1,8 @@
 import React, { ChangeEvent, KeyboardEvent, Dispatch, SetStateAction, useState } from 'react'
 import { Mensagem } from '../ChatPage'
 import styles from './Input.module.css'
+import { v4 as uuidv4 } from 'uuid'
+import supabaseClient from '../../../supabase'
 
 interface Props {
   mensagens: Mensagem[]
@@ -28,14 +30,18 @@ export default function ChatInput({ mensagens, setListaMensagens }: Props) {
   }
 
   function newMensagem() {
-    setListaMensagens([
-      {
-        conteudo: mensagem,
-        usuario: getUser(),
-        id: mensagens.length,
-      },
-      ...mensagens,
-    ])
+    supabaseClient
+      .from('mensagens')
+      .insert([
+        {
+          de: getUser(),
+          texto: mensagem,
+        },
+      ])
+      .then(({ data }) => {
+        data && setListaMensagens([{ ...data[0] }, ...mensagens])
+      })
+
     setMensagem('')
   }
 
