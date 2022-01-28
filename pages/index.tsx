@@ -1,4 +1,3 @@
-import type { NextPage } from 'next'
 import LoginFormulario from '../src/components/Login/LoginPage'
 import styles from '../styles/Home.module.css'
 

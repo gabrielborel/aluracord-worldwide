@@ -22,7 +22,7 @@
   letter-spacing: 1px;
 }
 
-.button {
+.buttonEnviar {
   font-family: 'Roboto', sans-serif;
   border: none;
   border-radius: 5px;
@@ -36,7 +36,7 @@
   font-size: 1rem;
 }
 
-.button:hover.button {
+.buttonEnviar:hover {
   background-color: var(--500primary);
   border: 2px solid var(--600primary);
   cursor: pointer;

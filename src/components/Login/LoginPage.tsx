@@ -14,7 +14,7 @@ export default function LoginFormulario() {
   return (
     <section className={styles.containerLogin}>
       <Usuario username={user.username} name={user.name} />
-      <Formulario setUser={setUser} />
+      <Formulario setUser={setUser} user={user} />
     </section>
   )
 }

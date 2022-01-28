@@ -5,9 +5,10 @@ import { User } from '../LoginPage'
 
 interface Props {
   setUser: Dispatch<SetStateAction<User>>
+  user: User
 }
 
-export default function Formulario({ setUser }: Props) {
+export default function Formulario({ setUser, user }: Props) {
   const roteamento = useRouter()
   let timer: any = 0
 
@@ -15,12 +16,12 @@ export default function Formulario({ setUser }: Props) {
     event.preventDefault()
     event.stopPropagation()
     clearTimeout(timer)
-    timer = setTimeout(() => getUserData(event.target.value), 700)
+    timer = setTimeout(() => getUserData(event.target.value), 500)
   }
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    roteamento.push('/chat')
+    roteamento.push(`/chat?username=${user.username}`)
   }
 
   async function getUserData(username: string) {
@@ -28,7 +29,6 @@ export default function Formulario({ setUser }: Props) {
     const response = await fetch(url)
     const userData = await response.json()
     setUser({ username: userData.login, name: userData.name })
-    localStorage.setItem('usuario', JSON.stringify(username))
   }
 
   return (

@@ -1,8 +1,8 @@
 import React, { ChangeEvent, KeyboardEvent, Dispatch, SetStateAction, useState } from 'react'
 import { Mensagem } from '../ChatPage'
 import styles from './Input.module.css'
-import { v4 as uuidv4 } from 'uuid'
 import supabaseClient from '../../../services/supabase'
+import { useRouter } from 'next/router'
 
 interface Props {
   mensagens: Mensagem[]
@@ -11,11 +11,10 @@ interface Props {
 
 export default function ChatInput({ mensagens, setListaMensagens }: Props) {
   const [mensagem, setMensagem] = useState<string>('')
+  const roteamento = useRouter()
 
   function getUser() {
-    if (typeof window !== 'undefined') {
-      return JSON.parse(localStorage.getItem('usuario') as string) || 'gabrielborel'
-    }
+    return roteamento.query.username
   }
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
@@ -31,7 +30,6 @@ export default function ChatInput({ mensagens, setListaMensagens }: Props) {
 
   function novaMensagem() {
     if (!mensagem) return
-
     supabaseClient
       .from('mensagens')
       .insert([
@@ -57,7 +55,10 @@ export default function ChatInput({ mensagens, setListaMensagens }: Props) {
         onChange={handleChange}
         onKeyPress={handleEnter}
       />
-      <button className={styles.button} onClick={novaMensagem}>
+      <div className={styles.sticker}>
+        <button className={styles.buttonSticker}>😋</button>
+      </div>
+      <button className={styles.buttonEnviar} onClick={novaMensagem}>
         Enviar
       </button>
     </div>
