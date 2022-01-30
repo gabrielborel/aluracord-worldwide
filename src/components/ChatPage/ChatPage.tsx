@@ -11,24 +11,37 @@ export interface Mensagem {
   id: string
 }
 
+function escutaMensagensEmTempReal(adicionaMensagem: (mensagem: Mensagem) => void) {
+  return supabaseClient
+    .from('mensagens')
+    .on('INSERT', (response) => {
+      adicionaMensagem(response.new)
+    })
+    .subscribe()
+}
+
 export default function ChatPage() {
   const [mensagens, setListaMensagens] = useState<Mensagem[]>([])
 
-  function carregarMensagens() {
+  useEffect(() => {
     supabaseClient
       .from('mensagens')
       .select('*')
       .order('id', { ascending: false })
       .then((response) => response.data && setListaMensagens(response.data))
-  }
 
-  useEffect(() => carregarMensagens(), [])
+    escutaMensagensEmTempReal((novaMensagem: Mensagem) => {
+      setListaMensagens((listaMensagem: Mensagem[]) => {
+        return [novaMensagem, ...listaMensagem]
+      })
+    })
+  }, [])
 
   return (
     <div className={styles.chatArea}>
       <Header />
       <MessageList listaMensagens={mensagens} setListaMensagens={setListaMensagens} />
-      <ChatInput mensagens={mensagens} setListaMensagens={setListaMensagens} />
+      <ChatInput />
     </div>
   )
 }

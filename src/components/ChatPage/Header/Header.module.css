@@ -25,7 +25,7 @@
   border: none;
   color: var(--000neutral);
   border-radius: 4px;
-  transition: 1s;
+  transition: 0.5s;
   cursor: pointer;
   border: 2px solid #f1040c;
 }

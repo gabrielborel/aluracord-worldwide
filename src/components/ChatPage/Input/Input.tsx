@@ -1,17 +1,19 @@
-import React, { ChangeEvent, KeyboardEvent, Dispatch, SetStateAction, useState } from 'react'
+import React, { ChangeEvent, KeyboardEvent, Dispatch, SetStateAction, useState, useEffect } from 'react'
 import { Mensagem } from '../ChatPage'
 import styles from './Input.module.css'
 import supabaseClient from '../../../services/supabase'
 import { useRouter } from 'next/router'
+import BotaoSticker from './BotaoSticker/BotaoSticker'
 
-interface Props {
-  mensagens: Mensagem[]
-  setListaMensagens: Dispatch<SetStateAction<Mensagem[]>>
-}
-
-export default function ChatInput({ mensagens, setListaMensagens }: Props) {
+export default function ChatInput() {
   const [mensagem, setMensagem] = useState<string>('')
   const roteamento = useRouter()
+
+  useEffect(() => {
+    if (!mensagem.startsWith(':sticker:')) return
+    novaMensagem()
+  }),
+    [mensagem]
 
   function getUser() {
     return roteamento.query.username
@@ -38,11 +40,13 @@ export default function ChatInput({ mensagens, setListaMensagens }: Props) {
           texto: mensagem,
         },
       ])
-      .then(({ data }) => {
-        data && setListaMensagens([{ ...data[0] }, ...mensagens])
-      })
+      .then()
 
     setMensagem('')
+  }
+
+  function novaMensagemSticker(sticker: string) {
+    setMensagem(`:sticker:${sticker}`)
   }
 
   return (
@@ -55,9 +59,7 @@ export default function ChatInput({ mensagens, setListaMensagens }: Props) {
         onChange={handleChange}
         onKeyPress={handleEnter}
       />
-      <div className={styles.sticker}>
-        <button className={styles.buttonSticker}>😋</button>
-      </div>
+      <BotaoSticker onStickerClick={novaMensagemSticker} />
       <button className={styles.buttonEnviar} onClick={novaMensagem}>
         Enviar
       </button>

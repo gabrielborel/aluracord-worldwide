@@ -34,7 +34,17 @@ export default function Message({ mensagem, usuario, handleDelete, id }: Props) 
           ''
         )}
       </div>
-      <p className={styles.messageContent}>{mensagem}</p>
+      {mensagem.startsWith(':sticker:') ? (
+        <Image
+          className={styles.sticker}
+          src={mensagem.replace(':sticker:', '')}
+          alt='sticker'
+          width='150px'
+          height='120px'
+        />
+      ) : (
+        <p className={styles.messageContent}>{mensagem}</p>
+      )}
     </li>
   )
 }

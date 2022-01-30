@@ -11,7 +11,7 @@ export default function Header() {
   return (
     <div className={styles.header}>
       <h5 className={styles.title}>Chat</h5>
-      <p className={styles.usuarioLogado}>
+      <span className={styles.usuarioLogado}>
         <p className={styles.online}>ONLINE:</p>{' '}
         <Image
           className={styles.usuarioImg}
@@ -21,7 +21,7 @@ export default function Header() {
           height='30px'
         />
         {usuario}
-      </p>
+      </span>
       <button className={styles.logoutButton} type='submit'>
         <Link href='/'>Logout</Link>
       </button>
