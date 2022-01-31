@@ -17,7 +17,7 @@ export default function Formulario({ setUser, user }: Props) {
     event.preventDefault()
     event.stopPropagation()
     clearTimeout(timer)
-    timer = setTimeout(() => getUserData(event.target.value), 300)
+    timer = setTimeout(() => getUserData(event.target.value), 100)
   }
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
