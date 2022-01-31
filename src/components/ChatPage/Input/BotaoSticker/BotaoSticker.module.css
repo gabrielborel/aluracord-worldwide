@@ -48,7 +48,7 @@
   right: -60px;
   padding: 13px;
   box-shadow: rgba(32, 32, 36, 0.15) 0px 0px 0px 1px, rgba(0, 0, 0, 0.24) 0px 8px 16px 0px;
-  border: 2px solid var(--400primary);
+  /* border: 2px solid var(--400primary); */
 }
 
 .title {
@@ -57,7 +57,7 @@
   font-weight: 700;
   padding: 3px;
   border-radius: 5px;
-  border: 2px solid var(--400primary);
+  /* border: 2px solid var(--400primary); */
   margin-bottom: 7px;
 }
 

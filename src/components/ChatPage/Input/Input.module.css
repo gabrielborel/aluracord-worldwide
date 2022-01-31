@@ -23,6 +23,10 @@
   letter-spacing: 1px;
 }
 
+.input:disabled {
+  cursor: none;
+}
+
 .buttonEnviar {
   font-family: 'Roboto', sans-serif;
   border: none;
