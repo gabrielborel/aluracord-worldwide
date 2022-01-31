@@ -12,12 +12,15 @@
 
 .messageList::-webkit-scrollbar {
   width: 20px;
+  border-radius: 5px;
 }
 
 .messageList::-webkit-scrollbar-track {
-  background: var(--500primary);
+  background: var(--500neutral);
+  border-radius: 5px;
 }
 
 .messageList::-webkit-scrollbar-thumb {
-  background: var(--600primary);
+  background: var(--700neutral);
+  border-radius: 5px;
 }

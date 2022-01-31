@@ -9,7 +9,7 @@ export interface User {
 }
 
 export default function LoginFormulario() {
-  const [user, setUser] = useState<User>({ username: 'gabrielborel', name: 'Gabriel Borel' })
+  const [user, setUser] = useState<User>({ username: 'octocat', name: 'The Octocat' })
 
   return (
     <section className={styles.containerLogin}>

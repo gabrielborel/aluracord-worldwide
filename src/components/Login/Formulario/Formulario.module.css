@@ -52,6 +52,9 @@
   opacity: 0.9;
   cursor: pointer;
   transition: 0.3s;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1.2px;
 }
 
 .botao:hover.botao {

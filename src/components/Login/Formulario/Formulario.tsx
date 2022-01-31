@@ -1,4 +1,4 @@
-import React, { FormEvent, ChangeEvent, Dispatch, SetStateAction } from 'react'
+import React, { FormEvent, ChangeEvent, Dispatch, SetStateAction, useState } from 'react'
 import styles from './Formulario.module.css'
 import { useRouter } from 'next/router'
 import { User } from '../LoginPage'
@@ -9,6 +9,7 @@ interface Props {
 }
 
 export default function Formulario({ setUser, user }: Props) {
+  const [podeSubmeter, setPodeSubmeter] = useState<boolean>(false)
   const roteamento = useRouter()
   let timer: any = 0
 
@@ -16,7 +17,7 @@ export default function Formulario({ setUser, user }: Props) {
     event.preventDefault()
     event.stopPropagation()
     clearTimeout(timer)
-    timer = setTimeout(() => getUserData(event.target.value), 500)
+    timer = setTimeout(() => getUserData(event.target.value), 300)
   }
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -29,6 +30,7 @@ export default function Formulario({ setUser, user }: Props) {
     const response = await fetch(url)
     const userData = await response.json()
     setUser({ username: userData.login, name: userData.name })
+    setPodeSubmeter(true)
   }
 
   return (
@@ -38,12 +40,18 @@ export default function Formulario({ setUser, user }: Props) {
       <input
         className={styles.input}
         type='text'
-        placeholder='Entre com o seu usuário no github...'
+        placeholder='Entre com o seu usuário do github...'
         onChange={handleChange}
       />
-      <button className={styles.botao} type='submit'>
-        Entrar
-      </button>
+      {podeSubmeter ? (
+        <button className={styles.botao} type='submit'>
+          Entrar
+        </button>
+      ) : (
+        <button className={styles.botao} type='submit' disabled>
+          Entrar
+        </button>
+      )}
     </form>
   )
 }

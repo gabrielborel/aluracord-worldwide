@@ -1,16 +1,14 @@
 .message {
   color: var(--000neutral);
   width: fit-content;
-  padding: 0.7rem 0.7rem 0.7rem 0.4rem;
+  padding: 0.8rem 1rem 1rem 1rem;
   border-radius: 5px;
   transition: .2s;
   margin-bottom: 0.5rem;
-  border: 1px solid transparent;
 }
 
 .message:hover.message {
   background-color: var(--800neutral);
-  border-color: var(--400primary);
 }
 
 .img {
