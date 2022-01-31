@@ -35,6 +35,7 @@
   padding: 0.65rem;
   margin-bottom: 0.5rem;
   color: var(--000neutral);
+  text-align: center;
 }
 
 .input::placeholder {

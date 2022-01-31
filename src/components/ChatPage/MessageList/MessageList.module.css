@@ -21,6 +21,6 @@
 }
 
 .messageList::-webkit-scrollbar-thumb {
-  background: var(--700neutral);
+  background: var(--600neutral);
   border-radius: 5px;
 }
